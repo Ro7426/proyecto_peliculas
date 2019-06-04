@@ -1,0 +1,58 @@
+<h1>INDEX</h1>
+
+<div class= "col-lg-12">
+
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <button class="btn btn-outline-success" type="button"><%= link_to 'new', movies_new_path %></button>
+    <button class="btn btn-outline-success" type="button"><%= link_to 'listar', movies_list_path %></button>
+    <button class="btn btn-outline-success" type="button">Main button</button>
+
+    
+  </form>
+</nav>
+
+
+
+
+
+
+
+</div>
+
+
+
+<% @movies.each do |movie| %>
+
+
+
+
+
+
+<div class="card w-50">
+  <div class="card-body">
+    <h5 class="card-title"><%= movie.name %></h5>
+  
+
+    <p class="card-text">año <%= movie.year %></p>
+    <button type="button" class="btn btn-warning"><%= link_to "borrar", movie, method: :delete%></button>
+    <button type="button" class="btn btn-warning"><%= link_to 'show', movie_path(movie) %></button>
+    <button type="button" class="btn btn-warning"><%= movie.favorite %></button>
+    
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<% end %>
+
+<%# creando un link para la vista new %>
+
+
+
